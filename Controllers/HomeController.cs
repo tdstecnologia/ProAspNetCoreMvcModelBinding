@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ProAspNetCoreMvcModelBinding.Models;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 
 namespace ProAspNetCoreMvcModelBinding.Controllers
@@ -56,5 +57,14 @@ namespace ProAspNetCoreMvcModelBinding.Controllers
         //public string Header([FromHeader(Name = "Accept-Language")] string accept) => $"Header: {accept}";
 
         public ViewResult Header(HeaderModel model) => View(model);
+
+        public ViewResult Body() => View();
+
+        [HttpPost]
+        public Person Body([FromBody]Person model)
+        {
+          Debug.WriteLine("Chamada do método ...");
+          return  model;
+        }
     }
 }
