@@ -51,6 +51,8 @@ namespace ProAspNetCoreMvcModelBinding.Controllers
 
         public ViewResult Address(IList<AddressSummary> addresses) => View(addresses ?? new List<AddressSummary>());
 
-        public string Header([FromHeader]string accept) => $"Header: {accept}";
+        //public string Header([FromHeader]string accept) => $"Header: {accept}";
+
+        public string Header([FromHeader(Name = "Accept-Language")] string accept) => $"Header: {accept}";
     }
 }
