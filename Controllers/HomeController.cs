@@ -21,7 +21,7 @@ namespace ProAspNetCoreMvcModelBinding.Controllers
         }
         */
 
-        public IActionResult Index(int? id)
+        public IActionResult Index([FromQuery] int? id)
         {
             Person person;
             if (id.HasValue && (person = repository[id.Value]) != null)
