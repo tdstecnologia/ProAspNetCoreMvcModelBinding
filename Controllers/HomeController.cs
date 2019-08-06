@@ -53,6 +53,8 @@ namespace ProAspNetCoreMvcModelBinding.Controllers
 
         //public string Header([FromHeader]string accept) => $"Header: {accept}";
 
-        public string Header([FromHeader(Name = "Accept-Language")] string accept) => $"Header: {accept}";
+        //public string Header([FromHeader(Name = "Accept-Language")] string accept) => $"Header: {accept}";
+
+        public ViewResult Header(HeaderModel model) => View(model);
     }
 }
