@@ -38,5 +38,7 @@ namespace ProAspNetCoreMvcModelBinding.Controllers
         [HttpPost]
         public ViewResult Create(Person model) => View("Index", model);
 
+        public ViewResult DisplaySummary(AddressSummary summary) => View(summary);
+
     }
 }
