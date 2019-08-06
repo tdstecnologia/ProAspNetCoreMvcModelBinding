@@ -38,7 +38,9 @@ namespace ProAspNetCoreMvcModelBinding.Controllers
         [HttpPost]
         public ViewResult Create(Person model) => View("Index", model);
 
-        public ViewResult DisplaySummary(AddressSummary summary) => View(summary);
+        //public ViewResult DisplaySummary(AddressSummary summary) => View(summary);
+
+        public ViewResult DisplaySummary([Bind(Prefix = nameof(Person.HomeAddress))] AddressSummary summary) => View(summary);
 
     }
 }
