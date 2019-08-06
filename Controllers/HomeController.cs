@@ -44,5 +44,6 @@ namespace ProAspNetCoreMvcModelBinding.Controllers
 
         public ViewResult DisplaySummary([Bind(nameof(AddressSummary.City), Prefix = nameof(Person.HomeAddress))] AddressSummary summary) => View(summary);
 
+        public ViewResult Names(string[] names) => View(names ?? new string[0]);
     }
 }
