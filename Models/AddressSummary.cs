@@ -3,12 +3,12 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace ProAspNetCoreMvcModelBinding.Models
 {
-    [Bind(nameof(City))]
+    //[Bind(nameof(City))]
     public class AddressSummary
     {
         public string City { get; set; }
 
-        [BindNever]
+        //[BindNever]
         public string Country { get; set; }
     }
 }
