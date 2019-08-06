@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace ProAspNetCoreMvcModelBinding.Models
 {
@@ -6,6 +7,8 @@ namespace ProAspNetCoreMvcModelBinding.Models
     public class AddressSummary
     {
         public string City { get; set; }
+
+        [BindNever]
         public string Country { get; set; }
     }
 }
