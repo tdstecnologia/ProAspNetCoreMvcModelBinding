@@ -40,7 +40,9 @@ namespace ProAspNetCoreMvcModelBinding.Controllers
 
         //public ViewResult DisplaySummary(AddressSummary summary) => View(summary);
 
-        public ViewResult DisplaySummary([Bind(Prefix = nameof(Person.HomeAddress))] AddressSummary summary) => View(summary);
+        //public ViewResult DisplaySummary([Bind(Prefix = nameof(Person.HomeAddress))] AddressSummary summary) => View(summary);
+
+        public ViewResult DisplaySummary([Bind(nameof(AddressSummary.City), Prefix = nameof(Person.HomeAddress))] AddressSummary summary) => View(summary);
 
     }
 }
