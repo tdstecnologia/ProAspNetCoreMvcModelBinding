@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ProAspNetCoreMvcModelBinding.Models;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace ProAspNetCoreMvcModelBinding.Controllers
@@ -44,6 +45,8 @@ namespace ProAspNetCoreMvcModelBinding.Controllers
 
         public ViewResult DisplaySummary([Bind(nameof(AddressSummary.City), Prefix = nameof(Person.HomeAddress))] AddressSummary summary) => View(summary);
 
-        public ViewResult Names(string[] names) => View(names ?? new string[0]);
+        //public ViewResult Names(string[] names) => View(names ?? new string[0]);
+
+        public ViewResult Names(IList<string> names) => View(names ?? new List<string>());
     }
 }
