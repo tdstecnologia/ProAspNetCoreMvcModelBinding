@@ -2,10 +2,10 @@
 
 namespace ProAspNetCoreMvcModelBinding.Models
 {
-    public enum Role
+    public enum Papel
     {
         Admin,
-        User,
-        Guest
+        Usuario,
+        Convidado
     }
 }

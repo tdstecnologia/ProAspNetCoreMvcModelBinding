@@ -1,4 +1,4 @@
-﻿@model IList<AddressSummary>
+﻿@model IList<EnderecoResumido>
 @{
     ViewBag.Title = "Address";
     Layout = "_Layout";
@@ -12,11 +12,11 @@
                 <legend>Address @(i + 1)</legend>
                 <div class="form-group">
                     <label>City:</label>
-                    <input name="[@i].City" class="form-control" />
+                    <input name="[@i].Cidade" class="form-control" />
                 </div>
                 <div class="form-group">
                     <label>Country:</label>
-                    <input name="[@i].Country" class="form-control" />
+                    <input name="[@i].Pais" class="form-control" />
                 </div>
             </fieldset>
         }
@@ -29,7 +29,7 @@ else
         <tr><th>City</th><th>Country</th></tr>
         @foreach (var address in Model)
         {
-            <tr><td>@address.City</td><td>@address.Country</td></tr>
+            <tr><td>@address.Cidade</td><td>@address.Pais</td></tr>
         }
     </table>
     <a asp-action="Address" class="btn btn-primary">Back</a>

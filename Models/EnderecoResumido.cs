@@ -4,11 +4,11 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 namespace ProAspNetCoreMvcModelBinding.Models
 {
     //[Bind(nameof(City))]
-    public class AddressSummary
+    public class EnderecoResumido
     {
-        public string City { get; set; }
+        public string Cidade { get; set; }
 
         //[BindNever]
-        public string Country { get; set; }
+        public string Pais { get; set; }
     }
 }

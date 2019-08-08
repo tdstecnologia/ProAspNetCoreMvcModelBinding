@@ -24,10 +24,10 @@ namespace ProAspNetCoreMvcModelBinding.Controllers
 
         public IActionResult Index([FromQuery] int? id)
         {
-            Person person;
-            if (id.HasValue && (person = repository[id.Value]) != null)
+            Pessoa pessoa;
+            if (id.HasValue && (pessoa = repository[id.Value]) != null)
             {
-                return View(person);
+                return View(pessoa);
             }
             else
             {
@@ -35,22 +35,22 @@ namespace ProAspNetCoreMvcModelBinding.Controllers
             }
         }
 
-        public ViewResult Create() => View(new Person());
+        public ViewResult Create() => View(new Pessoa());
 
         [HttpPost]
-        public ViewResult Create(Person model) => View("Index", model);
+        public ViewResult Create(Pessoa pessoa) => View("Index", pessoa);
 
         //public ViewResult DisplaySummary(AddressSummary summary) => View(summary);
 
         //public ViewResult DisplaySummary([Bind(Prefix = nameof(Person.HomeAddress))] AddressSummary summary) => View(summary);
 
-        public ViewResult DisplaySummary([Bind(nameof(AddressSummary.City), Prefix = nameof(Person.HomeAddress))] AddressSummary summary) => View(summary);
+        public ViewResult DisplaySummary([Bind(nameof(EnderecoResumido.Cidade), Prefix = nameof(Pessoa.EnderecoCasa))] EnderecoResumido endereco) => View(endereco);
 
         //public ViewResult Names(string[] names) => View(names ?? new string[0]);
 
-        public ViewResult Names(IList<string> names) => View(names ?? new List<string>());
+        public ViewResult Names(IList<string> nomes) => View(nomes ?? new List<string>());
 
-        public ViewResult Address(IList<AddressSummary> addresses) => View(addresses ?? new List<AddressSummary>());
+        public ViewResult Address(IList<EnderecoResumido> addresses) => View(addresses ?? new List<EnderecoResumido>());
 
         //public string Header([FromHeader]string accept) => $"Header: {accept}";
 
@@ -61,10 +61,10 @@ namespace ProAspNetCoreMvcModelBinding.Controllers
         public ViewResult Body() => View();
 
         [HttpPost]
-        public Person Body([FromBody]Person model)
+        public Pessoa Body([FromBody]Pessoa pessoa)
         {
           Debug.WriteLine("Chamada do método ...");
-          return  model;
+          return  pessoa;
         }
     }
 }
