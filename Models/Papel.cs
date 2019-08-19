@@ -2,7 +2,7 @@
 
 namespace ProAspNetCoreMvcModelBinding.Models
 {
-    public enum Papel
+    public enum Permissao
     {
         Admin,
         Usuario,

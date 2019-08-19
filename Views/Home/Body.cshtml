@@ -1,31 +1,31 @@
 ﻿@{
-    ViewBag.Title = "Address";
+    ViewBag.Title = "Endereço";
     Layout = "_Layout";
 }
 @section scripts {
     <script src="~/jquery/jquery.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-        $("button").click(function (e) {
-        $.ajax("/Home/Body", {
-        method: "post",
-        contentType: "application/json",
-        data: JSON.stringify({
-        firstName: "Bob",
-        lastName: "Smith"
-        }),
-        success: function (data) {
-        $("#firstName").text(data.firstName);
-        $("#lastName").text(data.lastName);
-        }
-        });
-        });
+            $("button").click(function (e) {
+                $.ajax("/Home/Body", {
+                    method: "post",
+                    contentType: "application/json",
+                    data: JSON.stringify({
+                        firstName: "Bob",
+                        lastName: "Smith"
+                    }),
+                    success: function (data) {
+                        $("#Nome").text(data.Nome);
+                        $("#Sobrenome").text(data.Sobrenome);
+                    }
+                });
+            });
         });
     </script>
 }
 <table class="table table-condensed table-bordered table-striped">
-    <tr><th>First Name:</th><td id="firstName"></td></tr>
-    <tr><th>Last Name:</th><td id="lastName"></td></tr>
+    <tr><th>Nome:</th><td id="Nome"></td></tr>
+    <tr><th>Sobrenome:</th><td id="Sobrenome"></td></tr>
 </table>
 <button class="btn btn-primary">Submit</button>
 

@@ -4,48 +4,47 @@ namespace ProAspNetCoreMvcModelBinding.Models
 {
     public class MemoryRepository : IRepository
     {
-        private Dictionary<int, Person> people
-        = new Dictionary<int, Person>
+        private Dictionary<int, Pessoa> pessoas = new Dictionary<int, Pessoa>
         {
-            [1] = new Person
+            [1] = new Pessoa
             {
-                PersonId = 1,
-                FirstName = "Bob",
-                LastName = "Smith",
-                Role = Role.Admin
+                PessoaId = 1,
+                Nome = "Maria",
+                Sobrenome = "Rodrigues",
+                Permissao = Permissao.Admin
             },
-            [2] = new Person
+            [2] = new Pessoa
             {
-                PersonId = 2,
-                FirstName = "Anne",
-                LastName = "Douglas",
-                Role = Role.User
+                PessoaId = 2,
+                Nome = "Leonor",
+                Sobrenome = "Nunes",
+                Permissao = Permissao.Usuario
             },
-            [3] = new Person
+            [3] = new Pessoa
             {
-                PersonId = 3,
-                FirstName = "Joe",
-                LastName = "Able",
-                Role = Role.User
+                PessoaId = 3,
+                Nome = "Matilde",
+                Sobrenome = "Henriques",
+                Permissao = Permissao.Usuario
             },
-            [4] = new Person
+            [4] = new Pessoa
             {
-                PersonId = 4,
-                FirstName = "Mary",
-                LastName = "Peters",
-                Role = Role.Guest
+                PessoaId = 4,
+                Nome = "Beatriz",
+                Sobrenome = "Mendes",
+                Permissao = Permissao.Convidado
             }
         };
-        public IEnumerable<Person> People => people.Values;
-        public Person this[int id]
+        public IEnumerable<Pessoa> Pessoa => pessoas.Values;
+        public Pessoa this[int id]
         {
             get
             {
-                return people.ContainsKey(id) ? people[id] : null;
+                return pessoas.ContainsKey(id) ? pessoas[id] : null;
             }
             set
             {
-                people[id] = value;
+                pessoas[id] = value;
             }
         }
 

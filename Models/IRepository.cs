@@ -4,7 +4,7 @@ namespace ProAspNetCoreMvcModelBinding.Models
 {
     public interface IRepository
     {
-        IEnumerable<Person> People { get; }
-        Person this[int id] { get; set; }
+        IEnumerable<Pessoa> Pessoa { get; }
+        Pessoa this[int id] { get; set; }
     }
 }

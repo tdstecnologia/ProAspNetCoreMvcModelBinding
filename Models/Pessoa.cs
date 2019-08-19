@@ -10,6 +10,6 @@ namespace ProAspNetCoreMvcModelBinding.Models
         public DateTime DataNascimento { get; set; }
         public Endereco EnderecoCasa { get; set; }
         public bool Aprovado { get; set; }
-        public Papel Papel { get; set; }
+        public Permissao Permissao { get; set; }
     }
 }
