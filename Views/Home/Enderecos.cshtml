@@ -3,19 +3,22 @@
     ViewBag.Title = "Endereço";
     Layout = "_Layout";
 }
+<div class="bg-primary panel-body">
+    <h1 class="text-center display-4 text-white">Endereços</h1>
+</div>
 @if (Model.Count() == 0)
 {
-    <form asp-action="Address" method="post">
+    <form asp-action="Enderecos" method="post">
         @for (int i = 0; i < 3; i++)
         {
             <fieldset class="form-group">
-                <legend>Address @(i + 1)</legend>
+                <legend>Endereços @(i + 1)</legend>
                 <div class="form-group">
-                    <label>City:</label>
+                    <label>Cidade:</label>
                     <input name="[@i].Cidade" class="form-control" />
                 </div>
                 <div class="form-group">
-                    <label>Country:</label>
+                    <label>País:</label>
                     <input name="[@i].Pais" class="form-control" />
                 </div>
             </fieldset>
@@ -26,11 +29,11 @@
 else
 {
     <table class="table table-condensed table-bordered table-striped">
-        <tr><th>City</th><th>Country</th></tr>
-        @foreach (var address in Model)
+        <tr><th>Cidade</th><th>País</th></tr>
+        @foreach (var endereco in Model)
         {
-            <tr><td>@address.Cidade</td><td>@address.Pais</td></tr>
+            <tr><td>@endereco.Cidade</td><td>@endereco.Pais</td></tr>
         }
     </table>
-    <a asp-action="Address" class="btn btn-primary">Voltar</a>
+    <a asp-action="Enderecos" class="btn btn-primary">Voltar</a>
 }

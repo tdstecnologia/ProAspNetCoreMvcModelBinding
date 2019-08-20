@@ -37,21 +37,6 @@ namespace ProAspNetCoreMvcModelBinding.Controllers
             }
         }
 
-        /*
-        public IActionResult Index([FromQuery] int? id)
-        {
-            Pessoa pessoa;
-            if (id.HasValue && (pessoa = repository[id.Value]) != null)
-            {
-                return View(pessoa);
-            }
-            else
-            {
-                return NotFound();
-            }
-        }
-        */
-
         public ViewResult Cadastro()
         {
             return View("Cadastro", new Pessoa());
@@ -73,27 +58,63 @@ namespace ProAspNetCoreMvcModelBinding.Controllers
             return View("EnderecoBasico", endereco);
         }
 
-        public ViewResult DisplaySummary([Bind(nameof(EnderecoResumido.Cidade), Prefix = nameof(Pessoa.EnderecoCasa))] EnderecoResumido endereco) => View(endereco);
+        public ViewResult EnderecoBasico3([Bind(nameof(EnderecoResumido.Cidade), Prefix = nameof(Pessoa.EnderecoCasa))] EnderecoResumido endereco)
+        {
+            return View("EnderecoBasico", endereco);
+        }
 
-        //public ViewResult Names(string[] names) => View(names ?? new string[0]);
+        public ViewResult Nomes(string[] nomes)
+        {
+            return View("Nomes", nomes ?? new string[0]);
+        }
 
-        public ViewResult Nomes(IList<string> nomes) => View(nomes ?? new List<string>());
+        public ViewResult Nomes2(IList<string> nomes)
+        {
+            return View("Nomes2", nomes ?? new List<string>());
+        }
 
-        public ViewResult Address(IList<EnderecoResumido> addresses) => View(addresses ?? new List<EnderecoResumido>());
+        public ViewResult Enderecos(IList<EnderecoResumido> enderecos)
+        {
+            return View("Enderecos", enderecos ?? new List<EnderecoResumido>());
+        }
 
-        //public string Header([FromHeader]string accept) => $"Header: {accept}";
+        public IActionResult Index4([FromQuery] int? id)
+        {
+            Pessoa pessoa;
+            if (id.HasValue && (pessoa = repository[id.Value]) != null)
+            {
+                return View(pessoa);
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
 
-        //public string Header([FromHeader(Name = "Accept-Language")] string accept) => $"Header: {accept}";
+        public string Header([FromHeader]string accept)
+        {
+            return $"Header: {accept}";
+        }
 
-        public ViewResult Header(HeaderModel model) => View(model);
+        public string Header2([FromHeader(Name = "Accept-Language")] string accept)
+        {
+            return $"Header: {accept}";
+        }
+        public ViewResult Header3(HeaderModel model)
+        {
+            return View("Header", model);
+        }
 
-        public ViewResult Body() => View();
+        [HttpGet]
+        public ViewResult Body()
+        {
+            return View();
+        }
 
         [HttpPost]
-        public Pessoa Body([FromBody]Pessoa pessoa)
+        public JsonResult Body([FromBody]Pessoa pessoa)
         {
-            Debug.WriteLine("Chamada do método ...");
-            return pessoa;
+            return Json(pessoa.Nome);
         }
     }
 }
