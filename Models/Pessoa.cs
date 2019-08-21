@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProAspNetCoreMvcModelBinding.Dominio;
+using System;
 
 namespace ProAspNetCoreMvcModelBinding.Models
 {

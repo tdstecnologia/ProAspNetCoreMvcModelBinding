@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ProAspNetCoreMvcModelBinding.Models
+namespace ProAspNetCoreMvcModelBinding.Dominio
 {
     public enum Permissao
     {

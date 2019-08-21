@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using ProAspNetCoreMvcModelBinding.Dominio;
+using System.Collections.Generic;
 
 namespace ProAspNetCoreMvcModelBinding.Models
 {

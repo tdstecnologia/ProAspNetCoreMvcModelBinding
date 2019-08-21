@@ -83,7 +83,7 @@ namespace ProAspNetCoreMvcModelBinding.Controllers
             Pessoa pessoa;
             if (id.HasValue && (pessoa = repository[id.Value]) != null)
             {
-                return View(pessoa);
+                return View("Index", pessoa);
             }
             else
             {
